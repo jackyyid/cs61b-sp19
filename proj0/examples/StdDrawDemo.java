@@ -48,6 +48,13 @@ public class StdDrawDemo {
 		  * in the standard drawing window. */
 		StdDraw.enableDoubleBuffering();
 
+		/** Sets up the universe so it goes from
+		  * -100, -100 up to 100, 100 */
+		StdDraw.setScale(-100, 100);
+
+		/* Clears the drawing window. */
+		// StdDraw.clear();
+
 		int waitTimeMilliseconds = 100;
 
 		/* Stamp 100 additional pictures in random locations,
@@ -86,6 +93,13 @@ public class StdDrawDemo {
 		  * in the standard drawing window. */
 		StdDraw.enableDoubleBuffering();
 
+		/** Sets up the universe so it goes from
+		  * -100, -100 up to 100, 100 */
+		StdDraw.setScale(-100, 100);
+
+		/* Clears the drawing window. */
+		// StdDraw.clear();
+
 		double size = 100;
 		while (size < 500) {
 			StdDraw.clear();
@@ -107,8 +121,8 @@ public class StdDrawDemo {
 	public static void main(String[] args) {
 		/** Try commenting out some of these calls and
 		* notice the differences. */
-		drawThree();
-		//drawRandom();
-		//drawZoom();
+		// drawThree();
+		drawRandom();
+		// drawZoom();
 	}
 }

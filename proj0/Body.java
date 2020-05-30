@@ -92,4 +92,10 @@ public class Body {
         xxPos = xxPos + dt * xxVel;
         yyPos = yyPos + dt * yyVel;
     }
+    /**
+    *   Draw the Body at appropriate position
+    */
+    public void draw() {
+        StdDraw.picture(xxPos, yyPos, "images/" + imgFileName);
+    }
 }
