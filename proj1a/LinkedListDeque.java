@@ -11,15 +11,15 @@ public class LinkedListDeque<T> {
      * Basic class LinkedNode.
      */
     private class LinkedNode {
-        public T item;
-        public LinkedNode next, prev;
+        private T item;
+        private LinkedNode next, prev;
         /**
          * Construct a basic linked list.
          * @param item Initial item.
          * @param nextLinkedNode Next linked list.
          * @param prevLinkedNode Previous linked list.
          */
-        public LinkedNode(T item, LinkedNode nextLinkedNode, LinkedNode prevLinkedNode) {
+        private LinkedNode(T item, LinkedNode nextLinkedNode, LinkedNode prevLinkedNode) {
             this.item = item;
             this.next = nextLinkedNode;
             this.prev = prevLinkedNode;
@@ -52,7 +52,7 @@ public class LinkedListDeque<T> {
      */
     public LinkedListDeque(LinkedListDeque other) {
         this();
-        for(int i = 0; i < other.size(); i++) {
+        for (int i = 0; i < other.size(); i++) {
             addLast((T) other.get(i));
         }
 
@@ -97,6 +97,9 @@ public class LinkedListDeque<T> {
      * Prints all item in deque from first to last separated by a space.
      */
     public void printDeque() {
+        if (size == 0) {
+            System.out.println();
+        }
         LinkedNode p = sentinel.next;
         while (p.next != sentinel) {
             System.out.print(p.item + " ");
@@ -140,7 +143,7 @@ public class LinkedListDeque<T> {
      * @return null if out of range, otherwise return item at given index.
      */
     public T get(int index) {
-        if (index >= size) {
+        if (index >= size || index < 0) {
             return null;
         }
         LinkedNode p = sentinel.next;
