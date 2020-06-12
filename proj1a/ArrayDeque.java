@@ -86,6 +86,7 @@ public class ArrayDeque<T> {
 
     /**
      * Add an item at the front of deque.
+     * If the array is full, i.e. size of array equals length, then doubling the capacity.
      */
     public void addFirst(T item) {
         if (size == items.length) {
@@ -98,6 +99,7 @@ public class ArrayDeque<T> {
 
     /**
      * Add an item at the last of deque.
+     * If the array is full, i.e. size of array equals length, then doubling the capacity.
      */
     public void addLast(T item) {
         if (size == items.length) {
@@ -140,6 +142,7 @@ public class ArrayDeque<T> {
 
     /**
      * Remove and return the first item of the array deque.
+     * Check if usage factor is less than 25% every time. Resize to half of capacity if true.
      * @return The first item of array deque.
      */
     public T removeFirst() {
@@ -156,6 +159,7 @@ public class ArrayDeque<T> {
 
     /**
      * Remove and return the last item of the array deque.
+     * Check if usage factor is less than 25% every time. Resize to half of capacity if true.
      * @return The last item of the array deque.
      */
     public T removeLast() {
