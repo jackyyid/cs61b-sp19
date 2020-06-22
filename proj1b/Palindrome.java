@@ -36,4 +36,28 @@ public class Palindrome {
         }
         return false;
     }
+    /**
+     * Return {@code true} if the given word is palindrome according to
+     * the character comparison test provided by {@code CharacterComparator}
+     */
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> deque = wordToDeque(word);
+        return isPalindrome(deque, cc);
+    }
+    /**
+     * Helper method returning true if a deque is palindrome,
+     * with character comparison test {@code CharacterComparator.}
+     */
+    private boolean isPalindrome(Deque deque, CharacterComparator cc) {
+        if (deque.size() < 2) {
+            return true;
+        }
+        char char1 = (char) deque.removeFirst();
+        char char2 = (char) deque.removeLast();
+        if (cc.equalChars(char1, char2)) {
+            return isPalindrome(deque, cc);
+        }
+        return false;
+    }
+
 }
