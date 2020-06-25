@@ -31,7 +31,6 @@ public class TestPlip {
 
     @Test
     public void testReplicate() {
-        // TODO
         Plip p1 = new Plip(1.5);
         Plip p2 = p1.replicate();
         assertNotSame(p1, p2);

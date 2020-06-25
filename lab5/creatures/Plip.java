@@ -106,7 +106,6 @@ public class Plip extends Creature {
      * private static final variable. This is not required for this lab.
      */
     public void move() {
-        // TODO
         energy -= moveEnergyLost;
         if (energy < minEnergy) {
             energy = minEnergy;
@@ -118,7 +117,6 @@ public class Plip extends Creature {
      * Plips gain 0.2 energy when staying due to photosynthesis.
      */
     public void stay() {
-        // TODO
         energy += stayEnergyGained;
         if (energy > maxEnergy) {
             energy = maxEnergy;
@@ -131,7 +129,6 @@ public class Plip extends Creature {
      * Plip.
      */
     public Plip replicate() {
-        // Todo
         double totalEnergy = energy;
         energy  = energy * repEnergyRemained;
         return new Plip(totalEnergy - energy);
@@ -154,7 +151,6 @@ public class Plip extends Creature {
         // Rule 1
         Deque<Direction> emptyNeighbors = new ArrayDeque<>();
         boolean anyClorus = false;
-        // TODO
         // (Google: Enhanced for-loop over keys of NEIGHBORS?)
         for (Map.Entry<Direction, Occupant> entry : neighbors.entrySet()) {
             Direction dir = entry.getKey();
