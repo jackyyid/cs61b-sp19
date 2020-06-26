@@ -17,13 +17,14 @@ public class TTFAF {
             source = new GZIPInputStream(source);
             GuitarPlayer player = new GuitarPlayer(source);
             player.play();
+//             GuitarPlayer player = new GuitarPlayer(new java.io.File("path/to/music.mid"));
+//             player.play();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         // You can also do this:
-        // GuitarPlayer player = new GuitarPlayer(new java.io.File("path/to/music.mid"));
-        // player.play();
+
     }
 
     private static final String TTFAF =
