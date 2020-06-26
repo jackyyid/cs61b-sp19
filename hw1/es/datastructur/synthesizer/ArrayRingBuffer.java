@@ -3,7 +3,7 @@ package es.datastructur.synthesizer;
 
 import java.util.Iterator;
 
-public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
+public class ArrayRingBuffer<T> implements BoundedQueue<T> {
     /* Index for the next dequeue or peek. */
     private int first;
     /* Index for the next enqueue. */
@@ -12,7 +12,9 @@ public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
     private int fillCount;
     /* Array for storing the buffer data. */
     private T[] rb;
-    /** Capacity of the buffer. */
+    /**
+     * Capacity of the buffer.
+     */
     private final int capacity;
 
     /**
@@ -51,6 +53,7 @@ public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
         }
         return idx + 1;
     }
+
     /**
      * Return the index decreased by 1, return {@code capacity - 1} when reach 0.
      */
@@ -60,6 +63,7 @@ public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
         }
         return idx - 1;
     }
+
     /**
      * Adds x to the end of the ring buffer. If there is no room, then
      * throw new RuntimeException("Ring buffer overflow").
@@ -146,6 +150,7 @@ public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
          * Count of iteration
          */
         int iterCount;
+
         /**
          * Construct an iterator
          */
@@ -153,6 +158,7 @@ public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
             idxCurr = first;
             iterCount = 0;
         }
+
         /**
          * Returns {@code true} if the iteration has more elements.
          */
@@ -166,14 +172,10 @@ public class ArrayRingBuffer<T>  implements BoundedQueue<T> {
          */
         @Override
         public T next() {
-            T returnItem = (T) rb[idxCurr];
+            T returnItem = rb[idxCurr];
             idxCurr = idxIncrement(idxCurr);
             iterCount += 1;
             return returnItem;
         }
     }
-
-    // TODO: When you get to part 4, implement the needed code to support
-    //       iteration and equals.
 }
-    // TODO: Remove all comments that say TODO when you're done.
