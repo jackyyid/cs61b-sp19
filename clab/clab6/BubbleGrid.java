@@ -51,8 +51,9 @@ public class BubbleGrid {
             // no bubbles fall.
             if (dartFall < 2) {
                 returnCount[dartCount] = 0;
+            } else {
+                returnCount[dartCount] = dartFall - 1; // minus the bubbles being eliminated by dart.
             }
-            returnCount[dartCount] = dartFall - 1; // minus the bubbles being eliminated by dart.
             dartCount += 1;
         }
         return returnCount;
