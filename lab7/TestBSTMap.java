@@ -1,4 +1,6 @@
 import static org.junit.Assert.*;
+
+import edu.princeton.cs.algs4.BST;
 import org.junit.Test;
 
 /** Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug */
@@ -75,6 +77,42 @@ public class TestBSTMap {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         b.put("hi", 1);
         assertTrue(b.containsKey("hi") && b.get("hi") != null);
+    }
+
+    @Test
+    public void testPrint() {
+        BSTMap<String, Integer> b = new BSTMap<>();
+        b.put("echi", 3);
+        b.put("acio", 2);
+        b.put("uous", 4545);
+        b.put("aps", 79);
+        b.put("wcbb", 22);
+        b.put("ksk", 646);
+        b.printInOrder();
+	}
+
+	@Test
+    public void testRemove() {
+        BSTMap<String, Integer> b = new BSTMap<>();
+        b.put("king", 134);
+        b.put("eagle", 212);
+        b.put("viva", 494);
+        b.put("bingo", 2892);
+        b.put("grace", 2424);
+        b.put("polar", 5656);
+        b.put("yid", 4921);
+        b.put("ashe", 434);
+        b.put("dirty", 444);
+        b.put("flame", 4646);
+        b.put("mimic", 456);
+        b.put("rose", 131);
+        b.put("xes", 4969);
+        b.put("zero", 113);
+        b.printInOrder();
+        System.out.println("----------------------");
+        int rm = b.remove("viva");
+        b.printInOrder();
+        assertEquals(494, rm);
     }
 
     public static void main(String[] args) {
