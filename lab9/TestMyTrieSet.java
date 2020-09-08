@@ -7,6 +7,20 @@ import java.util.List;
  */
 public class TestMyTrieSet {
 
+
+    @Test
+    public void testAdd() {
+        MyTrieSet t = new MyTrieSet();
+        t.add("add");
+        t.add("ad");
+        assertFalse(t.contains("a"));
+        assertFalse(t.contains("aasdfasdf"));
+        assertFalse(t.contains("at"));
+        assertTrue(t.contains("add"));
+        assertTrue(t.contains("ad"));
+    }
+
+
     // assumes add/contains work
     @Test
     public void sanityClearTest() {
@@ -54,6 +68,28 @@ public class TestMyTrieSet {
         }
     }
 
+    @Test
+    public void testCollect() {
+        MyTrieSet t = new MyTrieSet();
+        t.add("add");
+        t.add("ad");
+        List<String> col = t.collcet();
+    }
+
+    @Test
+    public void testKeyWithPrefix() {
+        MyTrieSet t = new MyTrieSet();
+        t.add("awls");
+        t.add("sad");
+        t.add("same");
+        t.add("sam");
+        t.add("sap");
+        List<String> list = t.keysWithPrefix("sa");
+        assertTrue(list.contains("sad"));
+        assertTrue(list.contains("same"));
+        assertTrue(list.contains("sam"));
+        assertTrue(list.contains("sap"));
+    }
     public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(TestMyTrieSet.class);
     }
